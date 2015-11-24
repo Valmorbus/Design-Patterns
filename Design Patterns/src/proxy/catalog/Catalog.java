@@ -17,19 +17,29 @@ public class Catalog implements CatalogInterface{
 	@Override
 	public void listFiles(String s) {
 		for(File str : folder){
-			System.out.println(str.getPath().substring(3));	
+			
 			if(str.isDirectory()){
+				System.out.println(str.getPath().substring(3)+ " is Directory");
 				secondList(str);
 			}
+			else
+				System.out.println(str.getPath().substring(3) + " is file");	
 		}
 			
 	}
 	private void secondList(File file){
-		System.out.print( " is Directory");
+		
 		secondaryFile = file;
 		secondaryFolder = secondaryFile.listFiles();
-		for (File f : secondaryFolder)
+		for (File f : secondaryFolder){
+			if (f.isDirectory()){
+				System.out.println(f.getPath().substring(3)+" is directory");
+				secondList(f);
+			}		
+			else
 			System.out.println(f.getPath().substring(3) +" is File");
+		}
+		
 	}
 
 	@Override
