@@ -1,4 +1,4 @@
-package lottery;
+package factory;
 
 public abstract class Table extends Furniture{
 	

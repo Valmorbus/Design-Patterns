@@ -1,4 +1,4 @@
-package lottery;
+package factory;
 
 public abstract class Bookshelf extends Furniture{
 	int numberOfBooks;

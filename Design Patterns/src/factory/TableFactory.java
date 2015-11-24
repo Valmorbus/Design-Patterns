@@ -1,4 +1,4 @@
-package lottery;
+package factory;
 
 public class TableFactory extends AbstractFactory{
 	

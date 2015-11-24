@@ -1,4 +1,4 @@
-package lottery;
+package factory;
 
 import java.util.Random;
 
