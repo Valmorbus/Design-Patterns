@@ -8,9 +8,11 @@ public class RealSecret implements SecretInterface{
 	}
 
 	@Override
-	public String showSecret() {
+	public void showSecret() {
 		// TODO Auto-generated method stub
-		return SECRET;
+		System.out.println(SECRET);
 	}
+	
+	
 
 }

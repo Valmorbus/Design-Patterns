@@ -7,9 +7,9 @@ public class SecretProxy implements SecretInterface{
 	private String password = "password";
 	private String falseSecret = "not valid login or password";
 	private RealSecret realSecret;
-	
-	
-	public void login(){
+
+	@Override
+	public void showSecret() {
 		Scanner sc = new Scanner(System.in);
 		boolean correct = false;
 		while (correct != true){
@@ -19,8 +19,8 @@ public class SecretProxy implements SecretInterface{
 			String tempPassword = sc.nextLine();
 			if (tempLogin.equalsIgnoreCase(login) && tempPassword.equalsIgnoreCase(password)){
 				correct = true;
-				
-				System.out.println(showSecret());
+				realSecret = new RealSecret();
+				realSecret.showSecret();
 				sc.close();
 			}
 			else{
@@ -28,13 +28,6 @@ public class SecretProxy implements SecretInterface{
 			}
 		}	
 		
-	}
-
-	@Override
-	public String showSecret() {
-		// TODO Auto-generated method stub
-		realSecret = new RealSecret();
-		return realSecret.showSecret();
 	}
 
 }

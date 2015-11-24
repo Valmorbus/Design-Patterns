@@ -32,4 +32,10 @@ public class Catalog implements CatalogInterface{
 			System.out.println(f.getPath().substring(3) +" is File");
 	}
 
+	@Override
+	public void login() {
+		
+		
+	}
+
 }
