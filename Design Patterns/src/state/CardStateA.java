@@ -3,9 +3,10 @@ package state;
 public class CardStateA implements State {
 
 	@Override
-	public void handle(ATM atm) {
-		atm.setState(this);
+	public void CardIsIn(ATM atm) {
+		
 		System.out.println("Card is inserted");
+		atm.setState(atm.getPINA());
 		
 
 	}
@@ -18,6 +19,12 @@ public class CardStateA implements State {
 
 	@Override
 	public void withDrawCash(ATM atm) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void NoCardIn(ATM atm) {
 		// TODO Auto-generated method stub
 		
 	}

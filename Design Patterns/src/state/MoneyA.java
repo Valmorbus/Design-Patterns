@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MoneyA implements State {
 	
 	@Override
-	public void handle(ATM atm) {}
+	public void CardIsIn(ATM atm) {}
 	
 
 	@Override
@@ -26,8 +26,13 @@ public class MoneyA implements State {
 			System.out.println("för mycket");
 		}
 		else System.out.println("withdrawn " + i);
+		
+	}
 
-	
+
+	@Override
+	public void NoCardIn(ATM atm) {
+		// TODO Auto-generated method stub
 		
 	}
 

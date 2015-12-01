@@ -9,15 +9,17 @@ public class ATM {
 	private State CardStateA;
 	private State PINA;
 	private State MoneyA;
+	private State NoCardIn;
 	
 	
 	
 	public ATM(){
-		this.state=null;
-
+		
 		CardStateA = new CardStateA();
 		PINA = new PINA();
 		MoneyA = new MoneyA();
+		NoCardIn = new NoCardIsIn();
+		this.state = NoCardIn;
 	}
 	
 
@@ -29,24 +31,58 @@ public class ATM {
 	}
 	
 	
-	public void handle() {
+	public void CardIsIn() {
 		//this.state=CardStateA;
-		CardStateA.handle(this);
+		state.CardIsIn(this);
 
 	}
 
 	
 	public void enterPin() {
 		//this.state=PINA;
-		PINA.enterPin(this);
+		state.enterPin(this);
 		
 	}
 
 	public void withDrawCash() {
 		//this.state=MoneyA;
-		MoneyA.withDrawCash(this);
+		state.withDrawCash(this);
 		
 	}
+	public void NoCardIn(){
+		state.NoCardIn(this);
+	}
+
+
+	public State getCardStateA() {
+		return CardStateA;
+	}
+
+
+
+
+	public State getPINA() {
+		return PINA;
+	}
+
+
+
+
+	public State getMoneyA() {
+		return MoneyA;
+	}
+
+
+	
+
+
+	public State getNoCardIn() {
+		return NoCardIn;
+	}
+
+
+	
+	
 	
 
 }
