@@ -13,8 +13,8 @@ public class Main {
 		System.out.println(stock.toString());
 		
 		stock.setValue(6000);
-		stock.setValue(300);
-		
+		stock.setValue(300); 
+	
 		
 	}
 
